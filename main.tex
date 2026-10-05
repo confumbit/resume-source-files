@@ -7,6 +7,9 @@
 
 \documentclass[letterpaper,11pt]{article}
 
+\usepackage{cmap}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -14,11 +17,15 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks,pdflang={en-US}]{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{accsupp}
 \input{glyphtounicode}
+\pdfgentounicode=1
+\pdfglyphtounicode{bulletoperator}{2022}
+\pdfglyphtounicode{asteriskmath}{002A}
 
 
 %----------FONT OPTIONS----------
@@ -33,11 +40,19 @@
 % \usepackage{charter}
 
 
+\hypersetup{
+    pdftitle={Hiten Dalmia - Resume},
+    pdfauthor={Hiten Dalmia},
+    pdfsubject={Resume},
+    pdfcreator={LaTeX}
+}
+
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{5pt}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
@@ -56,9 +71,6 @@
 \titleformat{\section}{
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
-
-% Ensure that generate pdf is machine readable/ATS parsable
-\pdfgentounicode=1
 
 %-------------------------
 % Custom commands
@@ -92,7 +104,8 @@
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
 
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{\raisebox{0.15ex}{\tiny\textbullet}}
+\renewcommand\labelitemiii{\raisebox{0.15ex}{\tiny\textbullet}}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
@@ -105,20 +118,12 @@
 
 \begin{document}
 
-%----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
-  \textbf{\Huge \scshape Hiten Dalmia} \\ \vspace{1pt}
-  \small \href{tel:918790847649}{\underline{+91 87908 47649}} $|$ \href{mailto:hitendalmia04@gmail.com}{\underline{hitendalmia04@gmail.com}} $|$
-  \href{https://www.linkedin.com/in/hiten-dalmia/}{\underline{linkedin/hiten-dalmia}} $|$
-  \href{https://github.com/confumbit}{\underline{github/confumbit}} $|$
+  \textbf{\Huge Hiten Dalmia} \\ \vspace{1pt}
+  \small \href{mailto:hitendwork@gmail.com}{\underline{hitendwork@gmail.com}} |
+  \href{https://www.linkedin.com/in/hiten-dalmia/}{\underline{linkedin/hiten-dalmia}} |
+  \href{https://github.com/confumbit}{\underline{github/confumbit}} |
   \href{https://confumbit.github.io/index.html}{\underline{confumbit.github.io (homepage)}}
-  % \href{https://confumbit.github.io/index.html}{\underline{confumbit.github.io}}\href{https://confumbit.github.io/index.html}{\underline{confumbit.github.io}}\\
-  % \hspace*{14.5cm}{\small (homepage)}\vspace{-11pt}
 \end{center}
 
 
@@ -127,87 +132,67 @@
 \resumeSubHeadingListStart
 \resumeSubheading
 {Chennai Mathematical Institute}{Chennai, India}
-{Master of Science in Theoretical Computer Science}{Aug. 2026 -- May 2028 (expected)}
+{Master of Science in Theoretical Computer Science}{}%Aug. 2026 -- Discontinued}
 
 \resumeSubheading
 {Kirori Mal College, University of Delhi}{Delhi, India}
-{Bachelor of Science (Honours with Research) in Mathematics\footnotesize{, Minor in Economics}}{Nov. 2022 -- May 2026}
+{Bachelor of Science (Honours with Research) in Mathematics, \footnotesize{Minor in Economics}}{}%Nov. 2022 -- May 2026}
 \resumeSubHeadingListEnd
 
-
-%-----------EXPERIENCE-----------
+% -----------EXPERIENCE-----------
 \section{Experience}
+
 \resumeSubHeadingListStart
 
 \resumeSubheading
 {Full-Stack Developer}{Mar. 2023 -- Present}
 {Freelance \& Fractal}{Remote}
 \resumeItemListStart
-\resumeItem{Worked as a freelance full-stack web developer, securing projects
-  independently on
-  \href{https://www.upwork.com/freelancers/~015388e15d840b96cb}{\underline{Upwork}}
-  and through \href{https://fractalweb.netlify.app/}{\underline{Fractal}}, a
-  freelance agency}
-\resumeItem{Developed a range of internal business applications, e-commerce
-  platforms, and designed digital media for brand communication, using Flutter,
-  NextJS, Python (Tkinter, Selenium, Pandas), and others. Worked on unit and BDD testing for React and Angular applications.}
-\resumeItem{\textbf{Order Procurement \& Management Solution} $|$ \emph{ExpressJS, NextJS, PostgreSQL, TypeScript, TailwindCSS}}
-\resumeItemListStart
-\resumeItem{Built a full-stack order placement portal for the company with session-based auth. and RESTful APIs.}
-\resumeItem{Designed dual interfaces: customer-facing product ordering and an office-side order management system.}
-\resumeItem{Designed the customer interface to display real-time product listings with current pricing and enable seamless order placement to logged-in users.}
-\resumeItem{Built the office interface as a comprehensive order management system, featuring employee assignment, activity logging, internal notes, processing WhatsApp messages into orders, and support for recurring orders.}
-\resumeItem{Architected the system to ensure scalability, maintainability, and efficient data handling, leveraging PostgreSQL as the relational database.}
-\resumeItemListEnd
-\resumeItemListEnd
+\resumeItem{Delivered 10+ production web and mobile applications for client businesses via Upwork and Fractal, specializing in full-stack architecture, e-commerce infrastructure, and automated testing pipelines.}
 
-% -----------Multiple Positions Heading-----------
-%    \resumeSubSubheading
-%     {Software Engineer I}{Oct 2014 - Sep 2016}
-%     \resumeItemListStart
-%        \resumeItem{Apache Beam}
-%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
-%     \resumeItemListEnd
-%    \resumeSubHeadingListEnd
-%-------------------------------------------
+\resumeItem{\textbf{Order Procurement \& Management Solution} | \emph{NextJS, NodeJS, PostgreSQL, TypeScript}}
+\resumeItemListStart
+\resumeItem{Architected a full-stack enterprise order portal utilizing NextJS, ExpressJS, TypeScript, and PostgreSQL with session-based authentication and RESTful APIs.}
+\resumeItem{Designed a dual-tier interface comprising a customer ordering portal with real-time inventory listings and an office administrative suite supporting employee task dispatch, audit logging, and recurring order schedules.}
+\resumeItem{Developed an automated order ingestion pipeline parsing incoming WhatsApp messages into structured database records, eliminating manual entry and accelerating order processing throughput.}
+\resumeItem{Designed relational PostgreSQL schemas with optimized indexing and relational integrity constraints to handle high-volume transactions efficiently.}
+\resumeItemListEnd
+\resumeItemListEnd
 
 \medskip
 
 \resumeSubheading
 {Software Developer}{Oct. 2023 -- Apr. 2025}
-{Tagglabs Experimental Pvt. Ltd. (Freelance)}{Gurugram, Haryana (Remote)}
+{Tagglabs Experimental Pvt. Ltd. (Contract)}{Gurugram, Haryana (Remote)}
 \resumeItemListStart
-\resumeItem{\textbf{Cross-platform AR App} $|$ \emph{Flutter, OpenCV, C, Django} {\textbf{(\underline{\href{https://discoverloka.org/}{Live link}})}}}
+\resumeItem{\textbf{Cross-platform AR App} | \emph{Flutter, Django, OpenCV, C} \textbf{(\underline{\href{https://discoverloka.org/}{Live link}})}}
 \resumeItemListStart
-\resumeItem{Led the development of the alpha release of a cross-platform augmented reality, location-aware mobile app made with Flutter for Android and iOS.}
-% \resumeItem{Built the UI from Figma designs and the backend in Django, implementing RESTful APIs.}
-\resumeItem{Developed an internal package for Flutter, integrating the SIFT algorithm for feature matching via native C APIs and the OpenCV library into the Flutter ecosystem. }
+\resumeItem{Architected a native C/C++ bridge using \texttt{dart:ffi} to port OpenCV Scale-Invariant Feature Transform (SIFT) keypoint algorithms into Flutter, enabling single-codebase cross-platform computer vision across Android and iOS.}
+\resumeItem{Engineered a real-time camera feed pipeline that normalized OS frame buffers and aspect ratios, converting raw video streams into C structs with zero memory leaks and 30+ FPS performance.}
+\resumeItem{Implemented real-time keypoint extraction and object recognition, transmitting match coordinates asynchronously to Dart for dynamic augmented reality UI overlay rendering.}
+\resumeItem{Developed responsive mobile interfaces in Flutter from Figma designs and built RESTful backend APIs in Django to power location-aware spatial discovery features for alpha release.}
 \resumeItemListEnd
+
 \medskip
-\resumeItem{\textbf{Kia National Conference App} $|$ \emph{Flutter}}
+
+\resumeItem{\textbf{Kia National Conference App} | \emph{Flutter}}
+% \begin{itemize}[itemsep=-12pt, parsep=0pt, topsep=0pt]
 \resumeItemListStart
-\resumeItem{Built an app for the Kia National Dealer Conference in Bangkok, Thailand, handles registration, hosts centralized attendee details, guides navigation around host
-  hotels/cities, and enables live audience engagement.}
+\resumeItem{Engineered an event management mobile app in Flutter for 500+ attendees at the Kia National Dealer Conference in Bangkok, featuring real-time registration, attendee directories, and interactive venue navigation.}
+% \resumeItem{Integrated live audience engagement services, including real-time Q\&A, live polling, and push notification workflows to streamline event operations.}
 \resumeItemListEnd
 \resumeItemListEnd
 
-\resumeSubheading
-{Web Developer Intern}{Nov. 2022}
-{Dualite}{Remote}
-% \resumeItemListStart
-% \resumeItem{Built interactive product placements made using vanilla Javascript with smooth, interactive and appealing animations.}
-% \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-
-%
-%-----------PROGRAMMING SKILLS-----------
+% -----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
 \begin{itemize}[leftmargin=0.15in, label={}]
   \small{\item{
-        \textbf{Languages}{: Python, JavaScript/TypeScript, C++, R, Mathematica, SQL, Dart} \\
-        \textbf{Frameworks/Libraries}{: Flutter, NextJS, React, NestJS, ExpressJS, React Native, TailwindCSS, Pandas, NumPy, Matplotlib, OpenCV, WordPress} \\
-        \textbf{Developer Tools}{: Vim, \LaTeX, Bash, Linux, Git, AWS} \\
+        \textbf{Languages \& Systems:} {Python, JavaScript/TypeScript, C++, Dart, C, SQL, R, Mathematica} \\
+        \textbf{Frameworks \& Databases:} {NodeJS, ExpressJS, NestJS, Django, PostgreSQL, Flutter, React, NextJS, React Native} \\
+        \textbf{Computer Vision \& Data Science:} {OpenCV (SIFT), NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib} \\
+        \textbf{Developer Tools \& Cloud:} {AWS, Git, Linux, Bash, Docker, Vim, \BeginAccSupp{ActualText=LaTeX}\LaTeX\EndAccSupp{}, Agentic Development, MCPs, LLM Pipeline \& Context Engineering, n8n} \\
         }}
 \end{itemize}
 
@@ -217,6 +202,9 @@
 \resumeSubheading
 {Erasmus Mundus Joint Master MATHS-DISC Fellowship}{Europe}
 {Issued by European Union and affiliated universities}{Mar. 2026}
+\resumeSubheading
+{Master in Mathematics (ISI) and MSc Computer Science (CMI) Scholarships}{India}
+{Indian Statistical Institute and Chennai Mathematical Institute respectively}{Jun. 2026}
 
 \resumeSubHeadingListEnd
 
