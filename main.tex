@@ -76,7 +76,7 @@
 % Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{
-    {#1 \vspace{-2pt}}
+    {#1}
   }
 }
 
@@ -85,21 +85,21 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-3pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-3pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-3pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -107,10 +107,11 @@
 \renewcommand\labelitemii{\raisebox{0.15ex}{\tiny\textbullet}}
 \renewcommand\labelitemiii{\raisebox{0.15ex}{\tiny\textbullet}}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, topsep=3pt, itemsep=5pt, parsep=0pt]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.14in, topsep=3pt, itemsep=2pt, parsep=0pt, partopsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+\newcommand{\resumeProjectTitle}[1]{\par\vspace{5pt}{\small #1\par}}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -132,7 +133,7 @@
 \resumeSubHeadingListStart
 \resumeSubheading
 {Chennai Mathematical Institute}{Chennai, India}
-{Master of Science in Theoretical Computer Science (On Full Scholarship)}{Discontinued}%Aug. 2026 -- Discontinued}
+{Master of Science in Theoretical Computer Science (On Full Scholarship)}{Discontinued}
 
 \resumeSubheading
 {Kirori Mal College, University of Delhi}{Delhi, India}
@@ -141,80 +142,57 @@
 
 % -----------EXPERIENCE-----------
 \section{Experience}
-
 \resumeSubHeadingListStart
-
 \resumeSubheading
-{Full-Stack Developer}{Mar. 2023 -- Present}
+{AI Developer}{Mar. 2023 -- Present}
 {Freelance (on Upwork) \& Fractal}{Remote}
 \resumeItemListStart
-\resumeItem{Delivered 10+ production applications for clients via Upwork and Fractal, specializing in full-stack architecture, end-to-end deplyoments, feature requests complete with BDD and unit tests, and automated business pipelines.}
-
-\resumeItem{\textbf{Order Procurement \& Management Solution} | \emph{NextJS, NodeJS, PostgreSQL, TypeScript}}
+\resumeItem{Delivered \textbf{10+ production applications} for Upwork and Fractal clients, covering full-stack development, deployment, testing, and workflow automation.}
+\resumeItemListEnd
+\resumeProjectTitle{\textbf{Supplier Catalogue \& Order-Policy Assistant} | \emph{Python, FAISS, FastAPI, Ragas, Docker}}
 \resumeItemListStart
-\resumeItem{Architected a full-stack enterprise order portal utilizing NextJS, ExpressJS, TypeScript, and PostgreSQL with session-based authentication, ETL pipelines and RESTful APIs.}
-\resumeItem{Designed a dual-tier interface comprising a customer ordering portal with real-time inventory listings and an office administrative suite supporting employee task dispatch, audit logging, and recurring order schedules.}
-\resumeItem{Developed an automated order ingestion pipeline parsing incoming WhatsApp messages into structured database records, eliminating manual entry and accelerating order processing throughput.}
-\resumeItem{Designed relational PostgreSQL schemas with optimized indexing and relational integrity constraints to handle high-volume transactions efficiently.}
+\resumeItem{Built a Retrieval-Augmented Generation (RAG) assistant for queries about pack sizes, minimum quantities, delivery terms, and returns, citing supplier documents and flagging missing or conflicting terms.}
+\resumeItem{Indexed catalogue and policy passages by supplier, product code, and document version; compared \textbf{keyword and FAISS retrieval} for exact SKU lookups and natural-language questions.}
+\resumeItem{Built a \textbf{human-reviewed benchmark} covering ambiguous product codes, revised policies, and unsupported questions; evaluated answer support with Ragas and checked judge disagreements against annotated answers.}
+\resumeItem{Deployed search and answer endpoints with Dockerized FastAPI, measured latency and generation cost, and added \textbf{GitHub Actions regression checks} for retrieval and citation failures.}
 \resumeItemListEnd
-\resumeItemListEnd
-
-\medskip
-
 \resumeSubheading
 {Software Developer}{Oct. 2023 -- Apr. 2025}
 {Tagglabs Experimental Pvt. Ltd. (Contract)}{Gurugram, Haryana (Remote)}
+\resumeProjectTitle{\textbf{LOKA -- Location-based Discovery \& AR App} | \emph{Flutter, Django, OpenCV, C/C++} (\underline{\href{https://discoverloka.org/}{Live link}})}
 \resumeItemListStart
-\resumeItem{\textbf{Cross-platform AR App} | \emph{Flutter, Django, OpenCV, C} \textbf{(\underline{\href{https://discoverloka.org/}{Live link}})}}
-\resumeItemListStart
-\resumeItem{Architected a native C/C++ bridge using \texttt{dart:ffi} to port OpenCV Scale-Invariant Feature Transform (SIFT) keypoint algorithms into Flutter, enabling single-codebase cross-platform computer vision across Android and iOS.}
-\resumeItem{Engineered a real-time camera feed pipeline that normalized OS frame buffers and aspect ratios, converting raw video streams into C structs with zero memory leaks and 30+ FPS performance.}
-\resumeItem{Implemented real-time keypoint extraction and object recognition, transmitting match coordinates asynchronously to Dart for dynamic augmented reality UI overlay rendering.}
-\resumeItem{Developed responsive mobile interfaces in Flutter from Figma designs and built RESTful backend APIs in Django to power location-aware spatial discovery features for alpha release.}
+\resumeItem{\textbf{Led alpha development} of a location-aware Flutter app for Android and iOS, supporting map-based discovery of community-contributed places with type, recency, and topic filters.}
+\resumeItem{Implemented Flutter interfaces from Figma designs and \textbf{Django REST APIs} for photographing places, pinning locations, and sharing descriptions and notes.}
+\resumeItem{Extended an OpenCV-based Flutter plugin with multiple reference images and matched coordinates for AR overlays; published the \href{https://pub.dev/packages/flutter_featurematching}{\underline{reusable package}}, with \textbf{670+ downloads in the past 30 days}.}
+\resumeItem{Developed a \textbf{30+ FPS camera-processing pipeline}, normalizing platform-specific frame buffers and aspect ratios before passing frames to native computer vision code.}
 \resumeItemListEnd
-
-\medskip
-
-\resumeItem{\textbf{Kia National Conference App} | \emph{Flutter}}
-% \begin{itemize}[itemsep=-12pt, parsep=0pt, topsep=0pt]
-\resumeItemListStart
-\resumeItem{Engineered an event management mobile app in Flutter for 500+ attendees at the Kia National Dealer Conference in Bangkok, featuring real-time registration, attendee directories, and interactive venue navigation.}
-% \resumeItem{Integrated live audience engagement services, including real-time Q\&A, live polling, and push notification workflows to streamline event operations.}
-\resumeItemListEnd
-\resumeItemListEnd
-
 \resumeSubHeadingListEnd
 
 % -----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
+\begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt, itemsep=0pt, parsep=0pt]
   \small{\item{
-        \textbf{Languages \& Systems:} {Python, JavaScript/TypeScript, C++, Dart, C, SQL, R, Mathematica} \\
-        \textbf{Frameworks \& Databases:} {NodeJS, ExpressJS, NestJS, Django, PostgreSQL, Flutter, React, NextJS, React Native} \\
-        \textbf{Computer Vision \& Data Science:} {OpenCV (SIFT), NumPy, Pandas, Scikit-learn, Seaborn, Matplotlib} \\
-        \textbf{Developer Tools \& Cloud:} {AWS, Git, Linux, Bash, Docker, Vim, \BeginAccSupp{ActualText=LaTeX}\LaTeX\EndAccSupp{}, Agentic Development, MCPs, LLM Pipeline \& Context Engineering, n8n} \\
+        \textbf{Languages:} Python, JavaScript/TypeScript, C/C++, Dart, SQL, R \\
+        \textbf{Frameworks \& Databases:} Node.js, Express.js, Django, FastAPI, PostgreSQL, Flutter, React, Next.js, React Native \\
+        \textbf{AI \& ML:} RAG, FAISS, Ragas, OpenCV, NumPy, Pandas, Scikit-learn, Matplotlib \\
+        \textbf{Developer Tools \& Cloud:} AWS, Git, Linux, Bash, Docker, GitHub Actions, n8n
         }}
 \end{itemize}
 
 %-----------ACHIEVEMENTS-----------
 \section{Achievements}
 \resumeSubHeadingListStart
-\resumeSubheading
-{Erasmus Mundus Joint Master MATHS-DISC Fellowship}{Europe}
-{Issued by European Union and affiliated universities}{Mar. 2026}
-\resumeSubheading
-{Master in Mathematics (ISI) and MSc Computer Science (CMI) Scholarships}{India}
-{Indian Statistical Institute and Chennai Mathematical Institute respectively}{Jun. 2026}
-
+\item \small{\textbf{Erasmus Mundus Joint Master MATHS-DISC Fellowship} \hfill Mar. 2026\\
+European Union and affiliated universities}
+\item \small{\textbf{Master in Mathematics (ISI) and MSc Computer Science (CMI) Scholarships} \hfill Jun. 2026\\
+Indian Statistical Institute and Chennai Mathematical Institute, respectively}
 \resumeSubHeadingListEnd
 
 %-----------PUBLICATIONS-----------
 \section{Publications}
-
 \resumeSubHeadingListStart
-\resumeSubheading
-{\href{https://doi.org/10.46753/pjmpa.2026.v01i01.001}{\underline{\textbf{Computable Analysis: Mathematical Foundations and Computability of Real Functions}}}}{}
-{Poincare Journal of Mathematical Physics \& Applications, Vol. 1, No. 1 (2026), 1--20 (with Sujit Kumar)}{}
+\item \small{\href{https://doi.org/10.46753/pjmpa.2026.v01i01.001}{\underline{\textbf{Computable Analysis: Mathematical Foundations and Computability of Real Functions}}}\\
+Poincare Journal of Mathematical Physics \& Applications, 1(1), 2026, pp. 1--20; with Sujit Kumar.}
 \resumeSubHeadingListEnd
 
 %-------------------------------------------
